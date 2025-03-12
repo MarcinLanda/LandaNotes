@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:elevation="4dp"
+    app:titleTextColor="?attr/colorOnPrimary" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Birthday"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="?attr/colorOnPrimary"
+            android:fontFamily="@font/roboto"/>
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@id/titleTextView"
+            android:background="?attr/colorSecondaryVariant"
+            android:hint="Name"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:textColor="?attr/colorOnPrimary">
+        </EditText>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/monthTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameEditText"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/colorSecondaryVariant"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHighlight="?attr/colorOnPrimary"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/monthDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="#00FFFFFF"
+                android:background="?attr/colorSecondaryVariant"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColorHighlight="?attr/colorOnPrimary"
+                android:hint="Select Month"
+                android:inputType="none"
+                android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/dayEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/monthTextInputLayout"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/colorSecondaryVariant"
+            android:hint="Day"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:paddingStart="8dp"
+            android:textColor="?attr/colorOnPrimary"></EditText>
+
+        <EditText
+            android:id="@+id/yearEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/dayEditText"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/colorSecondaryVariant"
+            android:hint="Year"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:paddingStart="8dp"
+            android:textColor="?attr/colorOnPrimary"></EditText>
+    </RelativeLayout>
+</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
